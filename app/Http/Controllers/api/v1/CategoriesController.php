@@ -17,6 +17,7 @@ class CategoriesController extends Controller
             $sub_category = DB::table('categories')->where('parent_id', '=', $category->id)->get();
             $category->sub_category = $sub_category;
         }
-        return CategoryResource::collection($categories);
+//        return CategoryResource::collection($categories);
+        return $categories;
     }
 }
